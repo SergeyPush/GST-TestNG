@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>GST-TestNG</groupId>
+    <artifactId>GST</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <profiles>
+        <profile>
+            <id>localhost</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <properties>
+                <user.username>automan</user.username>
+                <user.password>a12345678</user.password>
+                <site.url>http://localhost:9090/gst2016/gstool</site.url>
+                <browser.name>chrome</browser.name>
+            </properties>
+            <build>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                </testResources>
+            </build>
+
+        </profile>
+        <profile>
+            <id>MAConline</id>
+
+            <properties>
+                <user.username>automan</user.username>
+                <user.password>a12345678</user.password>
+                <site.url>http://10.211.55.3:9090/gst2016/gstool</site.url>
+                <browser.name>chrome</browser.name>
+            </properties>
+
+            <build>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                </testResources>
+            </build>
+        </profile>
+
+        <profile>
+            <id>MAConlineChrome</id>
+
+            <properties>
+                <user.username>automan</user.username>
+                <user.password>a12345678</user.password>
+                <site.url>http://10.211.55.3:9090/gst2016/gstool</site.url>
+                <browser.name>chrome</browser.name>
+            </properties>
+
+            <build>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                </testResources>
+            </build>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>3.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.10</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-testng-adaptor</artifactId>
+            <version>1.4.22</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <!-- put your configurations here -->
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.19.1</version>
+                    <configuration>
+                        <testFailureIgnore>true</testFailureIgnore>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>${suite}</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                    <!--<configuration>-->
+                        <!--<suiteXmlFiles>-->
+                            <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
+                        <!--</suiteXmlFiles>-->
+                    <!--</configuration>-->
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>

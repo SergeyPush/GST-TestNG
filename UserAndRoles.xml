@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create New Security Concept">
+
+    <test name="Create Security Concept" preserve-order="true">
+        <classes>
+            <!--<class name="tests.MAT_USER_AND_ROLES.Test001_LoginTest"/>-->
+            <class name="tests.MAT_USER_AND_ROLES.Test002_Add_New_User"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test003_Cancel_Button_Verification"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test004_Convert_User_To_Employee"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test004_Convert_User_To_Employee"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test005_Linking_Roles"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test006_Create_New_Role"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test007_Cancel_Button_Verification"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test008_Changing_Role_Permissions"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test009_User_Rights_Verification"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test010_Delete_Created_Role"/>
+            <class name="tests.MAT_USER_AND_ROLES.Test011_Delete_Created_User"/>
+
+        </classes>
+    </test>
+</suite>
